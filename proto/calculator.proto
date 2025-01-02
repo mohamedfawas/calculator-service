@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package proto;
+option go_package = "./proto";
+
+service Calculator {
+    rpc Add (CalculateRequest) returns (CalculateResponse) {}
+    rpc Subtract (CalculateRequest) returns (CalculateResponse) {}
+}
+
+message CalculateRequest {
+    int32 a = 1;
+    int32 b = 2;
+}
+
+message CalculateResponse {
+    int32 result = 1;
+}
